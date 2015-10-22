@@ -1,4 +1,4 @@
-ansible-role-ufw
+ansible-role-ufw [![Build Status](https://travis-ci.org/okfine/ansible-role-ufw.svg?branch=master)](https://travis-ci.org/okfine/ansible-role-ufw)
 =========
 
 Ansible role to install and configure ufw on Debian/Ubuntu systems.
