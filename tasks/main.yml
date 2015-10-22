@@ -1,0 +1,25 @@
+---
+- name: Install ufw (Debian/Ubuntu)
+  apt:
+    pkg: "{{ item }}"
+    state: installed
+    update_cache: yes
+    cache_valid_time: "{{ 60*60*4 }}"
+  with_items:
+    - ufw
+
+- name: Set deny policy for incoming traffic
+  ufw:
+    policy: deny
+
+- name: Allow incoming traffic on specified ports/protocols
+  ufw:
+    rule: allow
+    port: "{{ item.port }}"
+    proto: "{{ item.protocol }}"
+  with_items:
+    - "{{ allow_list }}"
+
+- name: Start UFW and enable at boot
+  ufw:
+    state: enabled
