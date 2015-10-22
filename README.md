@@ -12,6 +12,7 @@ This role is designed for use on the Operating Systems listed below.
 
 Role Variables
 --------------
+
 The ```allow_list``` variable is a list of hashes which include ports/protocols to allow through the firewall.
 
 	allow_list:
